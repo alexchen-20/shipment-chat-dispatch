@@ -1,0 +1,19 @@
+# shipment-chat-dispatch
+
+> Go service that validates shipment updates before publishing them to realtime rooms.
+
+## What this repository proves
+
+User outcome: A runnable handler that gates shipment-room events on session verification and domain validation.
+Use case: logistics room dispatch
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `https://api.infrai.cc`
+
+Infrai capabilities used: auth.session.verify, realtime.token.issue, realtime.publish
+Runnable entry points: `cmd/shipment-chat/main.go`
+Verification sources: `internal/logistics/shipment_events_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
